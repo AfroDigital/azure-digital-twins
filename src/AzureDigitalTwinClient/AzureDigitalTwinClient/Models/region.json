@@ -1,0 +1,13 @@
+{
+  "@id": "dtmi:com:midmark:dtschema:salesregion;1",
+  "@context": "dtmi:dtdl:context;2",
+  "@type": "Interface",
+  "displayName": "Sales Region",
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "RegionName",
+      "schema": "string"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "@id": "dtmi:com:midmark:dtschema:sterilizer;1",
+  "@type": "Interface",
+  "@context": "dtmi:dtdl:context;2",
+  "displayName": "Sterilizer",
+  "description": "A Sterilizer is a Midmark  device that is utilized to sterilize medical equipment.",
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "idealOperatingTemperature",
+      "schema": "double",
+      "writable": true
+    },
+    {
+      "@type": "Command",
+      "name": "firmwareUpdate",
+      "request": {
+        "name": "updateTime",
+        "displayName": "Firmware Update Time",
+        "description": "Requested time to update  the device firmware.",
+        "schema": "dateTime"
+      },
+      "response": {
+        "name": "firwareUpdateScheduledTime",
+        "schema": "dateTime"
+      }
+    },
+    {
+      "@type": "Property",
+      "name": "firmwareStatus",
+      "schema": {
+        "@type": "Object",
+        "fields": [
+          {
+            "name": "version",
+            "schema": "string"
+          },
+          {
+            "name": "lastUpdated",
+            "schema": "date"
+          }
+        ]
+      },
+      "writable": true
+    },
+    {
+      "@type": "Relationship",
+      "name": "is_located_in",
+      "displayName": "Sterilizer is located in room",
+      "description": "A relationship to show power vacuum belongs to a medical room.",
+      "target": "dtmi:com:midmark:dtschema:room;1"
+    }
+
+  ]
+}

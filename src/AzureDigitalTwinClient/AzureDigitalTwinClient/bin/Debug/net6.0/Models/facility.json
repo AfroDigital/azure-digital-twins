@@ -1,0 +1,42 @@
+{
+  "@id": "dtmi:com:midmark:dtschema:medicalfacility;1",
+  "@type": "Interface",
+  "@context": "dtmi:dtdl:context;2",
+  "displayName": "Medical Facility",
+  "description": "A Medical Facility is a physical building that is dedicated to one customer and practice.",
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "facilityGeoCoordinates",
+      "schema": {
+        "@type": "Object",
+        "fields": [
+          {
+            "name": "latitude",
+            "schema": "double"
+          },
+          {
+            "name": "longitude",
+            "schema": "double"
+          }
+        ]
+      },
+      "writable": true
+    },
+    {
+      "@type": "Relationship",
+      "name": "has_room",
+      "displayName": "Medical Facility Has Rooms",
+      "description": "A relationship to show medical facility has a medical room.",
+      "target": "dtmi:com:midmark:dtschema:room;1"
+    },
+
+    {
+      "@type": "Relationship",
+      "name": "is_located_in",
+      "displayName": "Mediac Facility is located in sales region",
+      "description": "A relationship to show a medical facility belogs to a region.",
+      "target": "dtmi:com:midmark:dtschema:salesregion;1"
+    }
+  ]
+}

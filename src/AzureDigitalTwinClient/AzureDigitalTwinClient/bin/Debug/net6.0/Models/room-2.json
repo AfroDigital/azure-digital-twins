@@ -1,0 +1,29 @@
+{
+  "@id": "dtmi:com:midmark:dtschema:room;1",
+  "@type": "Interface",
+  "@context": "dtmi:dtdl:context;2",
+  "displayName": "Medical Room",
+  "description": "A Medical Room is a physical room in a Medical Facility.",
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "roomNumber",
+      "schema": "string",
+      "writable": true
+    },
+    {
+      "@type": "Relationship",
+      "name": "has_sterilizer",
+      "displayName": "Medical Room Has Sterilizer",
+      "description": "A relationship yo show medical room has a sterilization unit.",
+      "target": "dtmi:com:midmark:dtschema:sterilizer;1"
+    },
+    {
+      "@type": "Relationship",
+      "name": "has_power_vacuum",
+      "displayName": "Medical Room Has Power Vacuum",
+      "description": "A relationship yo show medical room has a power vacuum unit.",
+      "target": "dtmi:com:midmark:dtschema:powervacuum;1"
+    }
+  ]
+}

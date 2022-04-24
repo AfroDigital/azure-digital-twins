@@ -1,0 +1,55 @@
+{
+  "@id": "dtmi:com:midmark:dtschema:powervacuum;1",
+  "@type": "Interface",
+  "@context": "dtmi:dtdl:context;2",
+  "displayName": "Power Vacuum",
+  "description": "A Power Vacuum is a Midmark dental device that is utilized to clean teeth.",
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "idealOperatingPressure",
+      "schema": "double",
+      "writable": true
+    },
+    {
+      "@type": "Command",
+      "name": "firmwareUpdate",
+      "request": {
+        "name": "updateTime",
+        "displayName": "Firmware Update Time",
+        "description": "Requested time to update  the device firmware.",
+        "schema": "dateTime"
+      },
+      "response": {
+        "name": "firwareUpdateScheduledTime",
+        "schema": "dateTime"
+      }
+    },
+    {
+      "@type": "Relationship",
+      "name": "is_located_in",
+      "displayName": "Power vacuum is located in room",
+      "description": "A relationship to show power vacuum belongs to a medical room.",
+      "target": "dtmi:com:midmark:dtschema:room;1"
+    },
+    {
+      "@type": "Property",
+      "name": "firmwareStatus",
+      "schema": {
+        "@type": "Object",
+        "fields": [
+          {
+            "name": "version",
+            "schema": "string"
+          },
+          {
+            "name": "lastUpdated",
+            "schema": "date"
+          }
+        ]
+      },
+      "writable": true
+    }
+
+  ]
+}
